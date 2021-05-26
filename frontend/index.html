@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="services/main.js"></script>
+    <script type="module" src="services/countriesService.js"></script>
+    <script type="module"src="services/alphabetService.js"></script>
+    <script type="module" src="services/helper.js"></script>
+
+    
+</head>
+
+<body onload="getAlphabet(`bg`)">
+    <div class="container" style="background-color: gainsboro; height: 800px; margin-top: 15px">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-4" id="alphabet"></div>
+            <div class="col-md-4" style="font-size: 20px; text-align: center;">
+                <div id="country" style="font-size: 20px; text-align: center;">
+                    Моля генерирайте държава
+                </div>
+                <div style="margin-top: 150px">
+                    <img id="hang" src="./images/err0.gif"/>
+                </div>
+
+                <div id="result" style="margin-top: 50px" style="display: none;">
+                    
+                </div>
+            </div>
+           
+
+            <div class="col-md-4">
+                <div>
+                    <button onclick="getCountry()">Генерирай държава</button>
+                </div>
+                <div style="margin-top: 50">
+                    <h3 id="timer" >60</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="margin-top: 50">
+                    <input type="text" id="countryNameToSend"/>
+                </div>
+                <div>
+                    <button onclick="addCountry()">Въведи държава</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
